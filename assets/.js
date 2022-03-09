@@ -26,7 +26,7 @@ function initPage() {
     axios.get(queryURL).then(function (response) {
       todayweatherEl.classList.remove("d-none");
 
-      // Parse response to display current weather
+      // Generates weather on response
       const currentDate = new Date(response.data.dt * 1000);
       const day = currentDate.getDate();
       const month = currentDate.getMonth() + 1;
@@ -46,7 +46,7 @@ function initPage() {
       currentWindEl.innerHTML =
         "Wind Speed: " + response.data.wind.speed + " MPH";
 
-      // Get UV Index
+      // Query for UV Index
       let lat = response.data.coord.lat;
       let lon = response.data.coord.lon;
       let UVQueryURL =
@@ -59,22 +59,9 @@ function initPage() {
         "&cnt=1";
       axios.get(UVQueryURL).then(function (response) {
         let UVIndex = document.createElement("span");
-
-        // When UV Index is good, shows green, when ok shows yellow, when bad shows red
-        if (response.data[0].value < 4) {
-          UVIndex.setAttribute("class", "badge badge-success");
-        } else if (response.data[0].value < 8) {
-          UVIndex.setAttribute("class", "badge badge-warning");
-        } else {
-          UVIndex.setAttribute("class", "badge badge-danger");
-        }
-        console.log(response.data[0].value);
-        UVIndex.innerHTML = response.data[0].value;
-        currentUVEl.innerHTML = "UV Index: ";
-        currentUVEl.append(UVIndex);
       });
 
-      // Get 5 day forecast for this city
+      // Forecast for City
       let cityID = response.data.id;
       let forecastQueryURL =
         "https://api.openweathermap.org/data/2.5/forecast?id=" +
@@ -84,7 +71,6 @@ function initPage() {
       axios.get(forecastQueryURL).then(function (response) {
         fivedayEl.classList.remove("d-none");
 
-        //  Parse response to display forecast for next 5 days
         const forecastEls = document.querySelectorAll(".forecast");
         for (i = 0; i < forecastEls.length; i++) {
           forecastEls[i].innerHTML = "";
@@ -131,7 +117,7 @@ function initPage() {
     });
   }
 
-  // Get history from local storage if any
+  // Local Storage
   searchEl.addEventListener("click", function () {
     const searchTerm = cityEl.value;
     getWeather(searchTerm);
@@ -140,7 +126,7 @@ function initPage() {
     renderSearchHistory();
   });
 
-  // Clear History button
+  // Clear Local Storage
   clearEl.addEventListener("click", function () {
     localStorage.clear();
     searchHistory = [];
