@@ -1,3 +1,4 @@
+![index_image](https://user-images.githubusercontent.com/97765679/158083334-c50f8ce0-9cc0-4ef4-a790-eff42f801462.png)
 # weather-dashboard
 
 # H1 Weather Dashboard Server Side API
