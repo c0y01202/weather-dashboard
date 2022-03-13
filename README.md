@@ -30,3 +30,8 @@ I programmed the functions to populate the page with data in javascript. This is
 3.  https://openweathermap.org/api/one-call-api
 4.  https://unpkg.com/axios/dist/axios.min.js
 5.  https://openweathermap.org/img/wn/
+
+## H3 Links Related to this site
+
+1. https://c0y01202.github.io/weather-dashboard/ For the Live Site
+2. https://github.com/c0y01202/weather-dashboard For the GitHub Repository
