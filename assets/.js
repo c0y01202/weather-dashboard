@@ -12,6 +12,7 @@ function initPage() {
   var fivedayEl = document.getElementById("fiveday-header");
   var todayweatherEl = document.getElementById("today-weather");
   let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+  console.log(searchHistory);
 
   // API Key (Unique)
   const APIKey = "5e5c3b1ddc68eec02f693aa2f157eb66";
