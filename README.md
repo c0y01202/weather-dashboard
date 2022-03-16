@@ -37,4 +37,4 @@ I programmed the functions to populate the page with data in javascript. This is
 1. https://c0y01202.github.io/weather-dashboard/ For the Live Site
 2. https://github.com/c0y01202/weather-dashboard For the GitHub Repository
 
-Craeted by: Claudia Chittim, 2022
+Created by: Claudia Chittim, 2022
